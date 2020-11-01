@@ -1,12 +1,10 @@
 # SES 360 (SES - Student Enrolllment System)
 
-`Technologies Used : ` HTML, CSS, `Angular 7`, `Material–UI`, PHP (Core), MySQL
+`Technologies Used :` HTML, CSS, `Angular 7`, `Material–UI`, PHP (Core), MySQL
 
-`Functionalities : ` : Multiple User Roles, Login, Logout, Previous Login History, Registration, Password Change, Forced Password Change From system generated password to new one
+`Functionalities :` Multiple User Roles, Login, Logout, Previous Login History, Registration, Password Change, Forced Password Change From system generated password to new one
 on First Login, REST Api Backend, Fully Dynamic Student Registration Form, User Role Based Menu
 Access etc.
-
-#
 
 ## From The Developer :
 
