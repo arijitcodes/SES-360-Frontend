@@ -1,0 +1,232 @@
+<h1 align="center">View Students</h1>
+
+<div class="row" align="right">
+  <!-- <input type="text" placeholder="Search" [(ngModel)]="searchText">&nbsp;&nbsp; -->
+  Search : &nbsp;&nbsp;
+  <mat-form-field class="example-form-field">
+    <!-- <mat-label>Enter Your Text</mat-label> -->
+    <input matInput type="text" placeholder="Enter Your Text" [(ngModel)]="searchText">
+    <button mat-button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</div><br>
+<mat-accordion>
+  <mat-expansion-panel disabled>
+    <mat-expansion-panel-header>
+      <div class="panel-header-head-id">
+        <mat-panel-title>
+          Id
+        </mat-panel-title>
+      </div>
+      <div class="panel-header-head">
+        <mat-panel-title>
+          Name
+        </mat-panel-title>
+      </div>
+      <div class="panel-header-head">
+        <mat-panel-title>
+          Date of Birth
+        </mat-panel-title>
+      </div>
+      <div class="panel-header-head">
+        <mat-panel-title>
+          Phone
+        </mat-panel-title>
+      </div>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel *ngFor="let a of allData | filter:searchText | paginate: { itemsPerPage:perPageItems, currentPage: p };">
+
+    <mat-expansion-panel-header>
+      <div class="panel-header-data-id">
+        <mat-panel-title>
+          {{ a.uId }}
+        </mat-panel-title>
+      </div>
+      <div class="panel-header-data">
+        <mat-panel-title>
+          {{ a.fName }} {{ a.lName }}
+        </mat-panel-title>
+      </div>
+      <div class="panel-header-data">
+        <mat-panel-title>
+          {{ a.dob | date: 'dd/MM/yyyy' }}
+        </mat-panel-title>
+      </div>
+      <div class="panel-header-data">
+        <mat-panel-title>
+          {{ a.phone }}
+        </mat-panel-title>
+      </div>
+      <!-- <div class="panel-description">
+        <mat-panel-description>
+          This is panel decription
+        </mat-panel-description>
+      </div> -->
+    </mat-expansion-panel-header>
+
+    <div class="panel-body">
+      <br>
+      <h2>Details of Student : </h2>
+      <table>
+
+        <tr>
+          <td>
+            Name :
+          </td>
+          <td>
+            {{ a.fName }} {{ a.lName }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Stream :
+          </td>
+          <td>
+            {{ a.name }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Email :
+          </td>
+          <td>
+            {{ a.email }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Phone :
+          </td>
+          <td>
+            {{ a.phone }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Date of Birth :
+          </td>
+          <td>
+            {{ a.dob | date: 'dd/MM/yyyy' }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Caste :
+          </td>
+          <td>
+            {{ a.caste }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Father's Name :
+          </td>
+          <td>
+            {{ a.fathersName }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Mother's Name :
+          </td>
+          <td>
+            {{ a.mothersName }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Registration Date :
+          </td>
+          <td>
+            {{ a.regDate | date: 'dd/MM/yyyy' }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Address :
+          </td>
+          <td>
+            {{ a.address }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            City :
+          </td>
+          <td>
+            {{ a.city }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            District :
+          </td>
+          <td>
+            {{ a.district }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            PIN :
+          </td>
+          <td>
+            {{ a.pin }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            State :
+          </td>
+          <td>
+            {{ a.state }}
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Country :
+          </td>
+          <td>
+            {{ a.country }}
+          </td>
+        </tr>
+
+      </table>
+    </div>
+
+  </mat-expansion-panel>
+  <!-- <select [ngModel]="selectedDevice" (ngModelChange)="onChange($event)">
+    <option *ngFor="i of devices">{{i}}</option>
+  </select>   -->
+  <div align="right">
+    <div class="b2">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div> Items per page : &nbsp;
+    <div class="b1">
+      <mat-form-field appearance="standard" style="width: 50px;">
+        <mat-label>Select</mat-label>
+        <mat-select [(ngModel)]="perPageItems" (ngModelChange)="onChangeItemsPerPage($event)">
+          <mat-option [value]="i" *ngFor="let i of items">{{ i }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</mat-accordion>
+<br><br>

@@ -1,0 +1,59 @@
+<!-- <p>
+  login works!
+</p>
+
+<mat-form-field>
+  <input matInput placeholder="Enter Email">
+</mat-form-field>
+<br><button mat-raised-button>Hello World</button>
+
+<br><br>
+<form class="example-form">
+  <mat-form-field class="example-full-width" floatLabel="auto" appearance="standard">
+    <mat-label>Email</mat-label>
+    <input matInput required [formControl]="emailFormControl" >
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+</form>
+
+ -->
+<br><br><br>
+<div class="loginBox" align="center">
+   <h1>Login</h1>
+
+  <form #form1="ngForm" (ngSubmit)="submit()">
+
+    <mat-form-field class="loginForm" appearance="standard">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" required [formControl]="emailFormControl">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+       Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+       Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="loginForm" appearance="standard">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" required minlength="5" [formControl]="passFormControl">
+        <mat-error *ngIf="passFormControl.hasError('required')">
+         Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="passFormControl.hasError('minlength')">
+          Password should be <strong>atleast 5 charactes long!</strong>
+        </mat-error>
+    </mat-form-field>
+    <br><br>
+
+    <!-- <button mat-raised-button [disabled]="!ngForm.valid">Submit</button> -->
+    <button type="submit" mat-raised-button [disabled]="form1.invalid">Submit</button>
+
+  </form>
+
+</div>

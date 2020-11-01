@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="navbar">
+  
+  <div><span><mat-icon (click)="sidenav.toggle()" style="cursor:pointer;">menu</mat-icon></span><span><font size="5px;">Student Enrollment System - SES 360</font></span></div>
+  <ng-container *ngIf="this.loggedIn">
+    <span><font size="2px;">Hello {{ this?.userSessionData[0] }} | Last Login : {{ userSessionData[2] }} - IP : {{ userSessionData[1] }}</font></span>
+    <!-- <span>About</span>
+    <span>Services</span> -->
+  </ng-container>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <!-- <mat-sidenav #sidenav mode="side" [(opened)]="opened"> -->
+  <mat-sidenav #sidenav mode="side" opened>
+    <!-- Sidenav<br><br> -->
+    <a routerLink="" style="text-decoration:none"><span class="sidenavElements">Home <mat-icon class="matIconColor">home</mat-icon></span></a><br>
+    <ng-container *ngIf="this.loggedIn">
+      <a routerLink="/ViewProfile" style="text-decoration:none"><span class="sidenavElements">Profile <mat-icon class="matIconColor">account_circle</mat-icon></span></a><br>
+    </ng-container>
+    <ng-container *ngIf="this.loggedIn">
+      <a routerLink="/ChangePassword" style="text-decoration:none"><span class="sidenavElements">Change Password <mat-icon class="matIconColor">lock</mat-icon></span></a><br>
+    </ng-container>
+    <ng-container *ngIf="this.isAdmin">
+      <a routerLink="/EnrollStudent" style="text-decoration:none"><span class="sidenavElements">Enroll Student <mat-icon class="matIconColor">add_box</mat-icon></span></a><br>
+      <a routerLink="/ViewStudents" style="text-decoration:none"><span class="sidenavElements">View Students <mat-icon class="matIconColor">people</mat-icon></span></a><br>
+    </ng-container>
+    <ng-container *ngIf="this.loggedIn; else elseBlock">
+      <a routerLink="/Logout" style="text-decoration:none"><span class="sidenavElements">Logout <mat-icon class="matIconColor">power_settings_new</mat-icon></span></a><br>
+    </ng-container>
+    <ng-template #elseBlock>
+      <a routerLink="Login" style="text-decoration:none"><span class="sidenavElements">Login <mat-icon class="matIconColor">exit_to_app</mat-icon></span></a><br>
+    </ng-template>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <!-- <button (click)="opened=!opened">Toggle Sidenav</button> -->
+    <!-- <button (click)="sidenav.toggle()">Toggle</button> -->
+    <!-- <mat-toolbar class="navbar2" color="primary">
+  
+        <div><mat-icon (click)="sidenav.toggle()" style="cursor:pointer;">menu</mat-icon></div>
+        <div>
+          <span><font size="2px;">Hello $User | Last Login : DD/MM/YYYY - HH:MM AM/PM - IP : 127.0.0.1</font></span>
+        </div>
+    </mat-toolbar> -->
+    <!-- <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    Main Content -->
+    
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

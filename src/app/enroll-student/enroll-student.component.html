@@ -1,0 +1,171 @@
+<div align="center">
+  <div class="container"><br>
+    <h1>Enroll New Student</h1>
+    <br>
+    <table style="width: 70%;border: 1px solid black; padding: 10px;"><tr><td>
+      <form #form1="ngForm" (ngSubmit)="submit()">
+        <div align="center">
+
+        <div class="formElementHeader" align="left">First Name : &nbsp;&nbsp;</div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>First Name</mat-label>
+          <input matInput type="text" required [formControl]="fcFName">
+          <mat-error *ngIf="fcFName.hasError('required')">
+            First Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+        
+        <div class="formElementHeader" align="left">Last Name : &nbsp;&nbsp;</div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Last Name</mat-label>
+          <input matInput type="text" required [formControl]="fcLName">
+          <mat-error *ngIf="fcLName.hasError('required')">
+            Last Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+        
+        <div class="formElementHeader" align="left">Stream : &nbsp;&nbsp;</div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Stream</mat-label>
+          <!-- <mat-select required [formControl]="fcStream">
+            <mat-option value="1">Science</mat-option>
+            <mat-option value="2">Arts</mat-option>
+            <mat-option value="3">IT (Information Technology)</mat-option>
+            <mat-option value="4">CSE (Computer Science Engineering)</mat-option>
+          </mat-select> -->
+          <mat-select required [formControl]="fcStream">
+            <mat-option [value]="s.streamId" *ngFor="let s of streams">{{ s.name }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="fcStream.hasError('required')">
+            Stream is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Date of Birth :</div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Choose Date of Birth</mat-label>
+          <input matInput [matDatepicker]="myDatePicker" type="text" [max]="maxDate" required [formControl]="fcDob">
+          <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+          <mat-datepicker #myDatePicker></mat-datepicker>
+          <mat-error *ngIf="fcDob.hasError('required')">
+            Date of Birth is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Caste : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Caste</mat-label>
+          <!-- <input matInput type="text" required [formControl]="fcCaste"> -->
+          <mat-select required [formControl]="fcCaste">
+            <mat-option value="General">General</mat-option>
+            <mat-option value="SC">SC</mat-option>
+            <mat-option value="ST">ST</mat-option>
+            <mat-option value="OBC">OBC</mat-option>
+          </mat-select>
+          <mat-error *ngIf="fcCaste.hasError('required')">
+            Caste is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Email : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" required [formControl]="fcEmail">
+          <mat-error *ngIf="fcEmail.hasError('email') && !fcEmail.hasError('required')">
+            Please enter a valid Email Address
+          </mat-error>
+          <mat-error *ngIf="fcEmail.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Mobile No. : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Mobile No.</mat-label>
+          <input matInput type="text" required [formControl]="fcMobile">
+          <mat-error *ngIf="fcMobile.hasError('required')">
+            Mobile No. is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Father's Name : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Father's Name</mat-label>
+          <input matInput type="text" required [formControl]="fcFathersName">
+          <mat-error *ngIf="fcFathersName.hasError('required')">
+            Father's Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Mother's Name : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Mother's Name</mat-label>
+          <input matInput type="text" required [formControl]="fcMothersName">
+          <mat-error *ngIf="fcMothersName.hasError('required')">
+            Mother's Name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Address : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Address (House No, Building, Street, Area)</mat-label>
+          <input matInput type="text" required [formControl]="fcAddress">
+          <mat-error *ngIf="fcAddress.hasError('required')">
+            Address is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">City/Town : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>City/Town</mat-label>
+          <input matInput type="text" required [formControl]="fcCity">
+          <mat-error *ngIf="fcCity.hasError('required')">
+            City/Town is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">District : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>District</mat-label>
+          <input matInput type="text" required [formControl]="fcDistrict">
+          <mat-error *ngIf="fcDistrict.hasError('required')">
+            District is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">State : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>State</mat-label>
+          <input matInput type="text" required [formControl]="fcState">
+          <mat-error *ngIf="fcState.hasError('required')">
+            State is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">PIN : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>PIN</mat-label>
+          <input matInput type="text" required [formControl]="fcPin">
+          <mat-error *ngIf="fcPin.hasError('required')">
+            PIN is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br>
+
+        <div class="formElementHeader" align="left">Country : </div>
+        <div class="formElementInput" align="center"><mat-form-field class="loginForm" appearance="standard">
+          <mat-label>Country</mat-label>
+          <input matInput type="text" required [formControl]="fcCountry">
+          <mat-error *ngIf="fcCountry.hasError('required')">
+            Country is <strong>required</strong>
+          </mat-error>
+        </mat-form-field></div><br><br>
+
+        <div align="center" style="width:80%;">
+          <button type="submit" mat-raised-button [disabled]="form1.invalid">Submit</button>
+        </div><br>
+
+      </div></form>
+    </td></tr></table>
+  </div>
+</div>
+<br><br>

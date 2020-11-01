@@ -1,0 +1,64 @@
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+mat-form-field {
+  margin-right: 12px;
+}
+
+.mat-expansion-panel-header-description {
+    align-content: center;
+}
+
+.panel-header {
+    width: 20%;
+}
+
+.panel-description {
+    width: auto;
+}
+
+.panel-header-head {
+    text-align: center;
+    width: 20%;
+    color: black;
+    font-weight: bold;
+}
+
+.panel-header-head-id {
+    text-align: center;
+    width: 5%;
+    color: black;
+    font-weight: bold;
+}
+
+.panel-header-data {
+    width: 20%;
+}
+
+.panel-header-data-id {
+    width: 5%;
+}
+
+/* table {
+    border : 1px solid black; padding: 20px;
+} */
+
+td {
+    padding-right : 20px;
+}
+
+.panel-body {
+    align-content: center;
+    padding-left: 5%;
+}
+
+.b1, .b2 {
+    display: inline-block;
+}

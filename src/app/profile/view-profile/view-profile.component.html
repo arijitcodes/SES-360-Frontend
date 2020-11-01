@@ -1,0 +1,174 @@
+<div class="container" align="center">
+  <h1 align="Center">Your Profile</h1>
+
+<!--   <table style="border : 1px solid black;">
+    <tr *ngFor="let k of keys">
+      <div class="container" style="display: inline-block;">
+      <td>
+        {{ k }}:
+      </td></div>
+      <div class="container" style="display: inline-block;">
+      <td>
+        {{ arr[k] }}
+      </td></div>
+    </tr>
+  </table><br><br> -->
+
+  <table>
+
+    <tr>
+      <td>
+        Name :
+      </td>
+      <td>
+        {{ arr?.fName }} {{ arr?.lName }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Role :
+      </td>
+      <td>
+        {{ rolesData?.roleName }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Stream :
+      </td>
+      <td>
+        {{ stream }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Subjects :
+      </td>
+      <td>
+        {{ s }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Email :
+      </td>
+      <td>
+        {{ arr?.email }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Phone :
+      </td>
+      <td>
+        {{ arr?.phone }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Date of Birth :
+      </td>
+      <td>
+        {{ arr?.dob | date: 'dd/MM/yyyy' }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Caste :
+      </td>
+      <td>
+        {{ arr?.caste }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Father's Name :
+      </td>
+      <td>
+        {{ arr?.fathersName }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Mother's Name :
+      </td>
+      <td>
+        {{ arr?.mothersName }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Registration Date :
+      </td>
+      <td>
+        {{ arr?.regDate | date: 'dd/MM/yyyy' }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Address :
+      </td>
+      <td>
+        {{ arr?.address }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        City :
+      </td>
+      <td>
+        {{ arr?.city }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        District :
+      </td>
+      <td>
+        {{ arr?.district }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        PIN :
+      </td>
+      <td>
+        {{ arr?.pin }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        State :
+      </td>
+      <td>
+        {{ arr?.state }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Country :
+      </td>
+      <td>
+        {{ arr?.country }}
+      </td>
+    </tr>
+
+
+  </table><br><br>
+</div>

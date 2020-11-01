@@ -1,0 +1,27 @@
+.loginForm{
+    max-width: 430px;
+    width: 100%
+  }
+  
+  .loginBox {
+    border-style:solid;
+    border-color:darkgray;
+    width: 60%;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+.formElementHeader {
+    width: 150px;
+    display: inline-block;
+    align-self: left;
+    text-align: right;
+}
+
+.formElementInput {
+    width:70%; 
+    padding-left: 10px;
+    display: inline-block; 
+    text-align: center;
+}

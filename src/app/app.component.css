@@ -1,0 +1,44 @@
+.navbar {
+    justify-content: space-between;
+    height: 10%;
+}
+
+.navbar2 {
+    justify-content: space-between;
+    height: 10%;
+    width: auto;
+    padding-left: 170px;
+}
+
+span {
+    padding-right: 20px;
+}
+
+span.sidenavElements {
+    display: block;
+    border: 1px;
+    border-color: white;
+    color: white;
+}
+
+mat-sidenav-container {
+    height: 90%;
+}
+
+mat-sidenav, mat-sidenav-content {
+    padding-left: 16px;
+    padding-top: 16px;
+}
+
+mat-sidenav {
+/*     background-color: lightcoral; */
+    width: 210px;
+    background-color: #673AB7;
+    color: white;
+}
+
+.matIconColor {
+    color: white;
+    display: inline-flex;
+    vertical-align: middle;
+}
